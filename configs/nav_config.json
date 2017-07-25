@@ -1,0 +1,17 @@
+{
+    "nav_configs":[
+        {
+            "url":"\/",
+            "name":"\u77e5\u8bc6\u5e93"
+        },
+        {
+            "url":"http:\/\/www.kamios.cn",
+            "name":"\u5b98\u7f51"
+        },
+        {
+            "url":"http:\/\/www.kamios.com",
+            "name":"\u767b\u9646"
+        }
+    ],
+    "user_nav_disabled":false
+}

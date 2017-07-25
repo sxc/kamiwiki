@@ -1,0 +1,10 @@
+{
+    "fields": [
+        "knowbase_search_placeholder(placeholder=Search, full_width=True)", "_",
+        "knowbase_show_comments(type=bool,default=False)",
+        "knowbase_header_animation(type=bool, default=True)",
+        "knowbase_main_color(type=color,default=#0697dc)",
+        "knowbase_display_all_categories(type=bool, default=True)",
+        "knowbase_categories(type=dom_list, css_class=one_line, form_keys=[category(type=category&level=1),summary,icon(type=icon)])"
+    ]
+}

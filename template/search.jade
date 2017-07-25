@@ -1,0 +1,19 @@
+extends base.jade
+category = posts.category
+block title
+	title= "%s - %s" % (request.args.s, site.title)
+block content
+	.common_page_wrap: .common_page: .common_page_core
+		.page_header
+			a.homepage(href=site.root_url) Home
+			span.split >
+			span= "search: %s"%request.args.s
+		+posts.set_min_per_page(8)
+		.page_body
+			for post in posts: .item
+				a(href=request.join(post.url, keyword=request.args.s))
+					h2= post.title
+				.summary= post.metadata.summary or post.content.limit(80).plain
+			if not posts
+				p.note sorry, but no posts found
+		+h.paginator(style='auto')

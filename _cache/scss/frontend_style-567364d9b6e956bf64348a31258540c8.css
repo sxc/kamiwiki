@@ -1,0 +1,203 @@
+/*581dd25c66b50ef8c0f93c923b3f5f83*/
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'PT Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, Hiragino Sans GB,
+    Microsoft YaHei, sans-serif;
+  font-size: 14px;
+  line-height: 2.1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+  * {
+    outline: none; }
+
+    .nav_container {
+      line-height: 38px;
+      min-height: 40px;
+      background: #fff;
+      z-index: 10;
+      display: block;
+      width: 100%;
+      padding: 0;
+      text-align: right;
+      -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); }
+      .nav_container .nav_body {
+        padding: 0 35px; }
+        .nav_container .site_avatar {
+          float: left;
+          height: 20px;
+          position: relative;
+          z-index: 99; }
+          .nav_container .site_avatar a {
+            display: block; }
+            .nav_container .site_avatar img {
+              margin-top: 8px;
+              max-height: 25px; }
+
+a, a:link, a:visited {
+  color: #0697dc;
+  text-decoration: none; }
+
+  a:hover {
+    color: #035379;
+    text-decoration: none; }
+
+    .header {
+      background-size: cover;
+      background-position: center; }
+      .header #search_bar {
+        height: 60px;
+        top: 100px;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+        position: relative; }
+        .header #search_bar input {
+          height: 60px;
+          line-height: 65px;
+          font-size: 18px;
+          width: 100%;
+          padding: 0 10px;
+          border: none;
+          border-radius: 5px;
+          background: rgba(255, 255, 255, 0.9); }
+          .header #search_bar input:focus {
+            background: rgba(255, 255, 255, 0.95); }
+        .header #search_bar .search_in_html_button {
+          position: absolute;
+          right: -20px;
+          top: 0;
+          background: #0697dc;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          margin-left: -3px;
+          text-align: center;
+          display: inline-block;
+          width: 80px;
+          height: 60px;
+          line-height: 60px;
+          font-size: 24px;
+          color: white; }
+
+.homepage_categories {
+  max-width: 1280px;
+  margin: 5em auto 3em auto; }
+  .homepage_categories .category {
+    display: block;
+    margin: 25px 15px;
+    font-weight: normal; }
+    .homepage_categories .category .category_body {
+      border-radius: 5px;
+      border: 1px solid transparent;
+      height: 200px;
+      text-align: center;
+      padding-top: 10px;
+      margin-top: 20px;
+      cursor: pointer; }
+      .homepage_categories .category .category_body i.icon {
+        font-size: 3.2em;
+        color: #0697dc;
+        display: block;
+        margin: 20px 0 15px 0; }
+        .homepage_categories .category .category_body h2 {
+          color: #333;
+          line-height: 1.2;
+          margin: 15px 0;
+          font-weight: bold;
+          font-size: 18px; }
+          .homepage_categories .category .category_body .summary {
+            color: #666;
+            padding: 0 10px;
+            line-height: 1.45; }
+    .homepage_categories .category:hover .page_body {
+      border: 1px solid #e6e6e6; }
+  .homepage_categories .category.without_summary .page_body i.icon {
+    margin-top: 40px; }
+
+.common_page_wrap {
+  background: #f2f2f2; }
+  .common_page_wrap .common_page {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 80px 0; }
+    .common_page_wrap .common_page .common_page_core {
+      background: white; }
+      .common_page_wrap .common_page .page_header {
+        border-bottom: 1px solid #eee;
+        padding: 25px 40px;
+        font-weight: bold;
+        font-size: 18px; }
+        .common_page_wrap .common_page .page_header span {
+          font-weight: normal;
+          color: #666;
+          font-size: 16px; }
+          .common_page_wrap .common_page .page_header span.split {
+            margin: auto 5px; }
+    .common_page_wrap .common_page .page_body {
+      padding: 50px 80px 30px 80px; }
+      .common_page_wrap .common_page .page_body .item {
+        margin-bottom: 60px; }
+        .common_page_wrap .common_page .page_body h2.title {
+          margin-top: -10px;
+          margin-bottom: 35px;
+          line-height: 1.35;
+          font-size: 28px; }
+          .common_page_wrap .common_page .page_body a h2 {
+            font-size: 18px;
+            font-weight: normal;
+            margin: 0.6em 0;
+            line-height: 1.2;
+            position: relative;
+            letter-spacing: 1px; }
+            .common_page_wrap .common_page .page_body a h2:before {
+              content: ".";
+              font-size: 36px;
+              color: #454545;
+              position: absolute;
+              top: -20px;
+              left: -15px; }
+      .common_page_wrap .common_page .page_body .summary {
+        line-height: 1.8;
+        font-size: 14px; }
+        .common_page_wrap .common_page .page_body .doc_toc a {
+          color: #0697dc; }
+          .common_page_wrap .common_page .page_body .doc_toc a:hover {
+            color: #555; }
+
+.footer {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin: 0 auto 10px auto; }
+  .footer a {
+    color: #999; }
+    .footer a:hover {
+      color: #0697dc; }
+
+.paginator {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 25px 0; }
+  .paginator a {
+    margin: 0 5px; }
+    .paginator a.current {
+      color: #353535; }
+      .paginator.no_pages {
+        display: none; }
+
+.markdown blockquote {
+  border-left: 0.4em solid #4ec3fa; }
+
+@media screen and (max-width: 48em) {
+  .common_page_wrap .common_page {
+    padding: 0;   }
+    .common_page_wrap .common_page .page_header {
+      padding: 20px 20px 15px 20px;   }
+      .common_page_wrap .common_page .page_body {
+        padding: 50px 30px 30px 30px;   }
+}

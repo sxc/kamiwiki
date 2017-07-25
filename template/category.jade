@@ -1,0 +1,24 @@
+extends base.jade
+
+category = posts.category
+
+block title
+	if not category
+		+response.raise_404()
+
+	title= category.title
+
+block content
+	.common_page_wrap: .common_page: .common_page_core
+		.page_header
+			a.homepage(href=site.root_url) Home
+			span.split >
+			a.category(href=category.url)= category.title
+
+		+posts.set_min_per_page(8)
+		.page_body
+			for post in posts: .item
+				a(href=post.url)
+					h2= post.title
+				.summary= post.metadata.summary or post.content.limit(80).plain
+		+h.paginator(style='auto')

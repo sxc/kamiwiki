@@ -1,0 +1,31 @@
+extends base.jade
+
+block content
+	+h.load('font')
+
+	categories_info = {}
+	sorted_categores = []
+	for knowbase_category in site.configs.knowbase_categories
+		+categories_info.set(knowbase_category.category, knowbase_category)
+		if knowbase_category.category
+			+sorted_categores.append(knowbase_category.category)
+
+
+	.homepage_categories: +pure
+		if site.configs.get('knowbase_display_all_categories', True)
+			match_categories = False
+		else
+			match_categories = True
+		for category in posts.categories.sort(attr='', ordered_attr='path', ordered_keys=sorted_categores, match=match_categories)
+			+pure(1, 0.5, 0.3333, 0.3333)
+				categorie_info = categories_info.get(category.path)
+				summary = categorie_info.summary or category.metadata.summary or ''
+				icon_class = categorie_info.icon or category.metadata.icon or 'fa fa-heart-o'
+				if summary
+					category_calss = 'category with_summary'
+				else
+					category_calss = 'category without_summary'
+				a(href=category.url, class=category_calss): .category_body
+					i(class=icon_class+' icon')
+					h2= category.title
+					if summary: p.summary= summary

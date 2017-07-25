@@ -1,0 +1,50 @@
+extends base.jade
+
+post = posts.post
+category = post.category
+
+mixin show_post_content(post)
+	.markdown
+		if post.metadata.refer
+			refer_doc = d.get_doc(post.metadata.refer)
+			if refer_doc and refer_doc.type == 'post'
+				blockquote.refer= refer_doc.content.plain_html
+		div= post.content
+
+block title
+	if not post
+		+response.raise_404()
+	title= post.title
+	+h.load('markdown')
+
+block content
+	.common_page_wrap: .common_page: .common_page_core
+		.page_header
+			a.homepage(href=site.root_url) Home
+			span.split >
+			if category
+				a.category(href=category.url)= category.title
+				span.split >
+			span= post.title
+		.page_body
+			h2.title= post.title
+			use_toc = post.toc and post.metadata.get("toc", True)
+			if use_toc
+				+pure
+					+pure(1, 0.8, 0.8)
+						+show_post_content(post)
+					+pure(0, 0.2, 0.2)
+						+h.auto_toc(post)
+			else
+				+show_post_content(post)
+
+			if site.configs.get('knowbase_show_comments', False)
+				+post.comments_as_html()
+
+	if request.args.keyword
+		+h.load('jquery')
+		+h.load('/fb_static/lib/mark/jquery.mark.min.js')
+		script(type='text/javascript')
+			$(document).ready(function(){
+				$('.page_body').mark('{{request.args.keyword}}')
+			})

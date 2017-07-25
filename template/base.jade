@@ -1,0 +1,43 @@
+html
+	head
+		+h.headers
+		block title
+			title= site.page_title
+		if site.configs.knowbase_main_color
+			+h.load("/template/frontend/style.scss", scss=True, main_color=site.configs.knowbase_main_color)
+		else
+			+h.load("/template/frontend/style.scss")
+	body
+	
+	body.body_for_item_list
+
+		.nav_container.auto_header.animated.fadeInDown
+			.nav_body
+				a.site_avatar(href='/')
+					img(src=site.site_avatar)
+
+	
+
+
+
+			+site.nav
+
+		cover_url = site.real_background_image or '/fb_static/unsplash/2.jpg'
+		search_base_url = (site.root_url + '/search').replace('//', '/')
+		.header#particles-js(style="background-image:url(%s)"%cover_url)
+			+posts.search_in_html(show_button=True, base_url=search_base_url, placeholder=site.configs.knowbase_search_placeholder)
+
+		.main
+			block content
+
+
+		.footer
+			a(target="_blank", href="{{request.url_root}}")
+				span  知识库 © {{site.now.year}} • All rights reserved.
+			.powered_by
+				a(href="http://www.kamios.cn", target="_blank") 卡米智慧校区
+
+		if site.configs.get('knowbase_header_animation', True)
+			+h.load('jquery')
+			+h.load('/template/frontend/particles.js')
+			+h.load('/template/frontend/run_particles.js')
