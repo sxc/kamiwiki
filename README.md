@@ -1,1 +1,1 @@
-# kamiwiki
+# Kami Wiki
